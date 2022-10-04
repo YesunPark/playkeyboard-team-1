@@ -12,27 +12,25 @@ const DetailInfo = () => {
 
   return (
     <Container>
-      <div className='container'>
+      <img alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
+      <img
+        className='preview-img'
+        alt='preview'
+        src='https://cdn.pixabay.com/photo/2022/09/07/21/23/ferris-wheel-7439636__340.jpg'
+      />
+      <div className='title'>
         <div>
-          <img alt='back' src='/images/detail/backwards.svg' />
+          <span className='name'>{data.name}</span>
+          <div className='creator'>{data.creator}</div>
         </div>
-        <img
-          className='preview-img'
-          alt='preview'
-          src='https://cdn.pixabay.com/photo/2022/09/07/21/23/ferris-wheel-7439636__340.jpg'
-        />
-        <div className='title'>
-          <span className='name'>앙무</span>
-          <img alt='share' src='/images/detail/share.svg' />
-        </div>
-        <div className='creator'>작가</div>
-        <TagList>
-          {list.map((tag) => {
-            return <li key={tag}>{tag}</li>;
-          })}
-        </TagList>
-        <button>광고배너</button>
+        <img alt='share' src='/images/detail/share.svg' />
       </div>
+      <TagList>
+        {list.map((tag) => {
+          return <li key={tag}>{tag}</li>;
+        })}
+      </TagList>
+      <button>광고배너</button>
     </Container>
   );
 };
