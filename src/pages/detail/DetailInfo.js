@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import TagList from '../Detail/TagList';
 
 const DetailInfo = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <Container>
       <div className='container'>
@@ -59,16 +66,28 @@ const Container = styled.div`
     font-weight: 500;
     line-height: 20px;
   }
+
+  .advertise {
+    width: 98%;
+    height: 50px;
+    margin: auto;
+    border: 0px;
+    background-color: #d9d9d9;
+    font-weight: 500;
+    line-height: 20px;
+  }
 `;
 
 const TagList = styled.ul`
   display: flex;
   flex-direction: row;
   margin: 20px 0px;
+  flex-wrap: wrap;
+  max-width: 90.2%;
 
   li {
     height: 28px;
-    margin-right: 4.12px;
+    margin: 0px 4.12px 8px 0px;
     padding: 4px 10.3px;
     background-color: #ebedf5;
     border-radius: 18px;
