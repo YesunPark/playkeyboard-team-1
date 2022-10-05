@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GlobalStyles from './GlobalStyles';
-import Category from './pages/Category/Category';
-import Detail from './pages/Detail/Detail';
+import Category from './pages/category/Category';
+import Detail from './pages/detail/Detail';
 
 function Router() {
   return (
