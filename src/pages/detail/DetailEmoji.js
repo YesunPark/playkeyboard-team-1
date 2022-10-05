@@ -19,6 +19,9 @@ const DetailEmoji = ({ data }) => {
 };
 
 const StyledDetailEmoji = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .detail-emoji-container {
     display: flex;
     flex-wrap: wrap;
