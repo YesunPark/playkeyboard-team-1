@@ -19,8 +19,8 @@ const Detail = () => {
     <DetailContainer>
       {data && (
         <div className='detail-container'>
-          {data.isLiveTheme && <DetailEmoji data={data} />}
           <DetailInfo data={data} />
+          {data.isLiveTheme && <DetailEmoji data={data} />}
         </div>
       )}
     </DetailContainer>

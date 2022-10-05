@@ -8,25 +8,29 @@ const DetailInfo = ({ data }) => {
     navigate(-1);
   };
 
+  console.log(data);
+
   return (
     <Container>
-      <img className='back' alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
-      <img className='preview-img' alt='preview' src={data.imageUrl} />
+      <img className='back hover' alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
+      <img className='preview-img hover' alt='preview' src={data.imageUrl} />
       <div className='title'>
         <div>
           <span className='name'>{data.name}</span>
           <div className='creator'>{data.creator}</div>
         </div>
-        <img className='share' alt='share' src='/images/detail/share.svg' />
+        <img className='share hover' alt='share' src='/images/detail/share.svg' />
       </div>
       <TagList>
         {data.hashtag.map((tag) => {
-          return <li key={tag}>{tag}</li>;
+          return (
+            <li key={tag} className='hover'>
+              {tag}
+            </li>
+          );
         })}
       </TagList>
-      <div className='advertise'>
-        <button className='advertise'>광고배너</button>
-      </div>
+      <div className='advertise hover'>AD</div>
     </Container>
   );
 };
@@ -69,13 +73,19 @@ const Container = styled.div`
   }
 
   .advertise {
+    text-align: center;
     width: 98%;
     height: 50px;
     margin: auto;
     border: 0px;
     background-color: #d9d9d9;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 50px;
+  }
+
+  .hover {
+    cursor: pointer;
   }
 `;
 
