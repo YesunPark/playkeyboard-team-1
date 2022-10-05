@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import styled from 'styled-components';
 
 const DetailEmoji = ({ data }) => {
-  const params = useParams();
-  const [emoji, setEmoji] = useState([]);
-
-  useEffect(() => {
-    data !== undefined && setEmoji(data.figure);
-  }, [data]);
-
-  console.log(data, 'data');
+  const emoji = data.figure;
 
   return (
     <StyledDetailEmoji>
