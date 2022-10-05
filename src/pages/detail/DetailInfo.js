@@ -8,8 +8,6 @@ const DetailInfo = ({ data }) => {
     navigate(-1);
   };
 
-  console.log(data);
-
   return (
     <Container>
       <img className='back hover' alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
