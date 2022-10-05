@@ -18,19 +18,6 @@ const CategoryContainer = styled.div`
     border: 1px solid black;
     color: ${({ theme }) => theme.colors.grayText};
   }
-
-  @media ${({ theme }) => theme.responsive.tablet} {
-    .category-container {
-      width: 100%;
-    }
-  }
-
-  /* @media screen and (max-width: 375px) {
-    //모바일
-    .category-container {
-      color: blue;
-    }
-  } */
 `;
 
 export default Category;
