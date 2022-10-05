@@ -2,26 +2,25 @@ import styled from 'styled-components';
 
 const Detail = () => {
   return (
-    <StyledDetail>
+    <DetailContainer>
       <div className='detail-container'></div>
-    </StyledDetail>
+    </DetailContainer>
   );
 };
 
-const StyledDetail = styled.div`
+const DetailContainer = styled.div`
   display: flex;
   justify-content: center;
 
   .detail-container {
     width: 640px;
-    height: 100vh;
+    min-height: 100vh;
     border: 1px solid black;
   }
 
-  @media screen and (max-width: 640px) {
-    //태블릿
+  @media ${({ theme }) => theme.responsive.tablet} {
     .detail-container {
-      width: 100%;
+      /* width: 100%; */
     }
   }
 `;
