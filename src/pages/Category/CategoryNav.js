@@ -22,7 +22,7 @@ const CategoryNav = () => {
       <div>
         <div className='logoArea'>
           <Link to='/'>
-            <Image src={require('../../assets/image/logo.png')} />
+            <Image src={require('../../asset/image/logo.png')} />
           </Link>
         </div>
         <h3>취향대로 골라보기</h3>
@@ -108,6 +108,7 @@ const Container = styled.div`
     padding: 80px 16px 16px;
     font-size: 16px;
     font-weight: 700;
+    color: #42444c;
   }
   nav {
     display: flex;
