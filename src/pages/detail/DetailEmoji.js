@@ -11,11 +11,13 @@ const DetailEmoji = ({ data }) => {
     data !== undefined && setEmoji(data.figure);
   }, [data]);
 
+  console.log(data, 'data');
+
   return (
     <StyledDetailEmoji>
       <div className='detail-emoji-container'>
-        {emoji.map((el) => {
-          return <img src={el.imageUrl} alt={el.keyword} className='emoji-img' />;
+        {emoji.map((el, i) => {
+          return <img src={el.imageUrl} alt={el.keyword} className='emoji-img' key={i} />;
         })}
       </div>
       <div className='detail-emoji-text'>
