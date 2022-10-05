@@ -8,18 +8,16 @@ const DetailInfo = ({ data }) => {
     navigate(-1);
   };
 
-  console.log(data);
-
   return (
     <Container>
-      <img alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
+      <img className='back' alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
       <img className='preview-img' alt='preview' src={data.imageUrl} />
       <div className='title'>
         <div>
           <span className='name'>{data.name}</span>
           <div className='creator'>{data.creator}</div>
         </div>
-        <img alt='share' src='/images/detail/share.svg' />
+        <img className='share' alt='share' src='/images/detail/share.svg' />
       </div>
       <TagList>
         {data.hashtag.map((tag) => {
@@ -36,6 +34,11 @@ const DetailInfo = ({ data }) => {
 const Container = styled.div`
   margin: 16px 16px 0;
 
+  .back {
+    width: 6.4%;
+    min-width: 24px;
+  }
+
   .preview-img {
     width: 100%;
     margin: 19.46px 0px 24px;
@@ -51,6 +54,11 @@ const Container = styled.div`
       font-size: 20px;
       font-weight: 700;
       line-height: 28px;
+    }
+
+    .share {
+      width: 5.33%;
+      min-width: 20px;
     }
   }
 

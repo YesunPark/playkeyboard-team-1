@@ -13,7 +13,6 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
       font-family: 'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic', sans-serif;
-      //글씨체 에러 대비해서 여러개 두기?
       font-weight: 400;
     }
     input, textarea { 
