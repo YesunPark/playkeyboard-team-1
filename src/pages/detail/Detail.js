@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import DetailInfo from './DetailInfo';
 import DetailEmoji from './DetailEmoji';
 
 const Detail = () => {
@@ -16,7 +17,12 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      {data && <div className='detail-container'>{data.isLiveTheme && <DetailEmoji data={data} />}</div>}
+      {data && (
+        <div className='detail-container'>
+          {data.isLiveTheme && <DetailEmoji data={data} />}
+          <DetailInfo data={data} />
+        </div>
+      )}
     </DetailContainer>
   );
 };
@@ -28,7 +34,6 @@ const DetailContainer = styled.div`
   .detail-container {
     width: 640px;
     min-height: 100vh;
-    /* border: 1px solid black; */
   }
 
   @media ${({ theme }) => theme.responsive.tablet} {

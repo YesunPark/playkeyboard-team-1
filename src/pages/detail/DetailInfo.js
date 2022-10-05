@@ -1,23 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import TagList from '../Detail/TagList';
-
-const DetailInfo = () => {
+const DetailInfo = ({ data }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);
   };
 
+  console.log(data);
+
   return (
     <Container>
       <img alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
-      <img
-        className='preview-img'
-        alt='preview'
-        src='https://cdn.pixabay.com/photo/2022/09/07/21/23/ferris-wheel-7439636__340.jpg'
-      />
+      <img className='preview-img' alt='preview' src={data.imageUrl} />
       <div className='title'>
         <div>
           <span className='name'>{data.name}</span>
@@ -26,20 +22,19 @@ const DetailInfo = () => {
         <img alt='share' src='/images/detail/share.svg' />
       </div>
       <TagList>
-        {list.map((tag) => {
+        {data.hashtag.map((tag) => {
           return <li key={tag}>{tag}</li>;
         })}
       </TagList>
-      <button>광고배너</button>
+      <div className='advertise'>
+        <button className='advertise'>광고배너</button>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  /* div {
-    border: 1px solid black;
-  } */
-  margin: 56px 16px 0;
+  margin: 16px 16px 0;
 
   .preview-img {
     width: 100%;
