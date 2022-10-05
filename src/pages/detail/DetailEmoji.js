@@ -44,7 +44,7 @@ const StyledDetailEmoji = styled.div`
   .detail-emoji-text {
     width: 290px;
     height: 48px;
-    color: #919299;
+    color: ${({ theme }) => theme.colors.grayText};
     text-align: center;
     font-size: 14px;
     line-height: 24px;
@@ -53,8 +53,8 @@ const StyledDetailEmoji = styled.div`
     }
     a {
       margin-bottom: 49px;
+      border-bottom: 1px solid #000000;
       color: #4b4e57;
-      text-decoration: underline;
     }
   }
 `;
