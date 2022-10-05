@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import DetailEmoji from './DetailEmoji';
+import KeyboardJinyoung from './keyboards/KeyboardJinyoung';
 
 const Detail = () => {
   const params = useParams();
@@ -16,7 +17,12 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      {data && <div className='detail-container'>{data.isLiveTheme && <DetailEmoji data={data} />}</div>}
+      {data && (
+        <div className='detail-container'>
+          {data.isLiveTheme && <DetailEmoji data={data} />}
+          <KeyboardJinyoung />
+        </div>
+      )}
     </DetailContainer>
   );
 };
