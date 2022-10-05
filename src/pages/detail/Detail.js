@@ -32,6 +32,12 @@ const DetailContainer = styled.div`
     min-height: 100vh;
     /* border: 1px solid black; */
   }
+
+  @media ${({ theme }) => theme.responsive.tablet} {
+    .detail-container {
+      width: 100%;
+    }
+  }
 `;
 
 export default Detail;
