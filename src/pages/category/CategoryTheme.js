@@ -7,8 +7,8 @@ const CategoryTheme = () => {
 
   useEffect(() => {
     const getList = async () => {
-      const data = await axios.get('https://api.plkey.app/theme?category=LIVE');
-      setList(data);
+      const listData = await axios.get('https://api.plkey.app/theme?category=LIVE');
+      setList(listData.data);
     };
     getList();
   }, []);
@@ -16,8 +16,8 @@ const CategoryTheme = () => {
   return (
     <>
       <ThemeContainer>
-        {list.length !== 0 &&
-          list.data.data.map((data) => {
+        {list.data.length !== 0 &&
+          list.data.map((data) => {
             return (
               <div className='theme-container'>
                 <div className='theme-top-container'>
