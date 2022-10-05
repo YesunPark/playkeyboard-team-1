@@ -13,6 +13,7 @@ const CategoryTheme = () => {
     getList();
   }, []);
 
+  console.log(list.data);
   return (
     <>
       <ThemeContainer>
@@ -23,11 +24,19 @@ const CategoryTheme = () => {
                 <div className='theme-top-container'>
                   <img src={data.imageUrl} alt='image' className='theme-img' />
                   <span className='theme-name'>{data.name}</span>
-                  <span className='theme-hashtag'>{data.hashtag}</span>
+                  {data.hashtag.map((tag) => {
+                    return <span className='theme-hashtag'>#{tag}</span>;
+                  })}
                 </div>
                 <div className='theme-bottom-container'>
-                  <span className='theme-download'>{data.downloads}</span>
-                  <span className='theme-price'>{data.price}</span>
+                  <div className='theme-download-container'>
+                    <img src={require('../../assets/images/download.png')} alt='image' />
+                    <span className='theme-download'>{data.downloads}</span>
+                  </div>
+                  <div className='theme-price-container'>
+                    <img src={require('../../assets/images/price.png')} alt='image' />
+                    <span className='theme-price'>{data.price}</span>
+                  </div>
                 </div>
               </div>
             );
@@ -51,7 +60,7 @@ const ThemeContainer = styled.div`
 
     .theme-img {
       width: 100%;
-      border-radius : 12px;
+      border-radius : 8px;
     }
 
     .theme-name {
@@ -62,13 +71,15 @@ const ThemeContainer = styled.div`
       line-height : 20px;
     }
 
-    .theme-hashtag {   
+    .theme-hashtag { 
+      display : initial;  
       font-weight: 400;
       font-size: 12px;
       line-height: 18px;
       color: #AAABB3;
       opacity : 1;
-      margin-top : 2px;
+      margin : 2px 2px 0 0;
+       word-break: break-all;
     }
 
     .theme-bottom-container {
@@ -78,12 +89,26 @@ const ThemeContainer = styled.div`
       font-size: 12px;
       line-height: 18px;
 
-      .theme-download {    
-        color: #AAABB3;
+      .theme-download-container {
+        display : inherit;
+
+        .theme-download {    
+           color: #AAABB3;
+        }
       }
 
-      .theme-price {     
-        color: #7DC9FC;
+      .theme-price-container {
+        display : inherit;
+
+         .theme-price {     
+            color: #7DC9FC;
+          }
+      }  
+
+      img {
+        width : 12px;
+        height : 12px;
+        margin : auto 3px auto auto;
       }
     }
 
