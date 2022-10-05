@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import CategoryTheme from './CategoryTheme';
+import CateogryOption from './CateogryOption';
 
 const Category = () => {
   return (
     <CategoryContainer>
       <div className='category-container'>
         <CategoryTheme />
+        <CateogryOption />
       </div>
     </CategoryContainer>
   );
