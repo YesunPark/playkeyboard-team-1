@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import DetailEmoji from './DetailEmoji';
 
 const Detail = () => {
   const params = useParams();
@@ -15,7 +16,9 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      <div className='detail-container'></div>
+      <div className='detail-container'>
+        <DetailEmoji data={data} />
+      </div>
     </DetailContainer>
   );
 };
@@ -27,7 +30,7 @@ const DetailContainer = styled.div`
   .detail-container {
     width: 640px;
     min-height: 100vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
 `;
 
