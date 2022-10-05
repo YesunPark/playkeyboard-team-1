@@ -10,14 +10,14 @@ const DetailInfo = ({ data }) => {
 
   return (
     <Container>
-      <img className='back hover' alt='back' onClick={handleBack} src='/images/detail/backwards.svg' />
+      <img className='back hover' alt='back' onClick={handleBack} src={require('../../assets/images/back.png')} />
       <img className='preview-img hover' alt='preview' src={data.imageUrl} />
       <div className='title'>
         <div>
           <span className='name'>{data.name}</span>
           <div className='creator'>{data.creator}</div>
         </div>
-        <img className='share hover' alt='share' src='/images/detail/share.svg' />
+        <img className='share hover' alt='share' src={require('../../assets/images/share.png')} />
       </div>
       <TagList>
         {data.hashtag.map((tag) => {
@@ -61,6 +61,9 @@ const Container = styled.div`
     .share {
       width: 5.33%;
       min-width: 20px;
+      height: 5.33%;
+      min-height: 20px;
+      margin-top: 5px;
     }
   }
 
