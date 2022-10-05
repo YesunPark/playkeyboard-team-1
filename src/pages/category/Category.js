@@ -18,6 +18,12 @@ const CategoryContainer = styled.div`
     border: 1px solid black;
     color: ${({ theme }) => theme.colors.grayText};
   }
+
+  @media ${({ theme }) => theme.responsive.tablet} {
+    .category-container {
+      width: 100%;
+    }
+  }
 `;
 
 export default Category;
