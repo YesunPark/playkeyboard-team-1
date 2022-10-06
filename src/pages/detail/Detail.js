@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import DetailEmoji from './DetailEmoji';
-import KeyboardJinyoung from './keyboards/KeyboardJinyoung';
+import KeyboardJinyoung from './keyboards/jinyoung/KeyboardJinyoung';
 
 const Detail = () => {
   const params = useParams();
