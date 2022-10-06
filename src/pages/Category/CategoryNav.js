@@ -21,10 +21,10 @@ const CategoryNav = () => {
     <Container>
       <div className='logo-area d-flex-between'>
         <Link to='/category' className='logo'>
-          <Img alt='' src={require('../../asset/image/logo.png')} />{' '}
+          <Img alt='' src={require('../../assets/images/logo.png')} />{' '}
         </Link>
         <Link to='' className='magnifier'>
-          <Img alt='' src={require('../../asset/image/magnifier.png')} />
+          <Img alt='' src={require('../../assets/images/magnifier.png')} />
         </Link>
       </div>
       <h3 className='sub-title'>취향대로 골라보기</h3>
