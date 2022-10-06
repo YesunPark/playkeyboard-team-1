@@ -8,6 +8,7 @@ import KeyboardJinyoung from './keyboards/jinyoung/KeyboardJinyoung';
 const Detail = () => {
   const params = useParams();
   const [data, setData] = useState();
+  const [isKeyboardClicked, setIsKeyboardClicked] = useState(true);
 
   useEffect(() => {
     axios(`https://api.plkey.app/theme/${params.themeId}`).then((res) => {
@@ -20,7 +21,7 @@ const Detail = () => {
       {data && (
         <div className='detail-container'>
           {data.isLiveTheme && <DetailEmoji data={data} />}
-          <KeyboardJinyoung />
+          {isKeyboardClicked && <KeyboardJinyoung setIsKeyboardClicked={setIsKeyboardClicked} />}
         </div>
       )}
     </DetailContainer>

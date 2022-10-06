@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+const Hangul = require('hangul-js');
 
-const KeyboardJinyoung = () => {
-  const [isKeyboardClicked, setIsKeyboardClicked] = useState(true);
-  const [inputValue, setInputValue] = useState('');
+const KeyboardJinyoung = ({ setIsKeyboardClicked }) => {
+  const [inputValue, setInputValue] = useState([]);
   const [isShiftClicked, setIsShiftClicked] = useState(false);
   const [isEngClicked, setIsEngClicked] = useState(false);
 
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
+  const firstDoubleLettersKr = ['ㅃ', 'ㅉ', 'ㄸ', 'ㄲ', 'ㅆ', 'ㅛ', 'ㅕ', 'ㅑ', 'ㅒ', 'ㅖ'];
   const firstLettersKr = ['ㅂ', 'ㅈ', 'ㄷ', 'ㄱ', 'ㅅ', 'ㅛ', 'ㅕ', 'ㅑ', 'ㅐ', 'ㅔ'];
-  const firstDoubleLettersKr = ['ㅃ', 'ㅉ', 'ㄸ', 'ㄲ', 'ㅆ', 'ㅛ', 'ㅕ', 'ㅑ', 'ㅐ', 'ㅔ'];
   const secondLettersKr = ['ㅁ', 'ㄴ', 'ㅇ', 'ㄹ', 'ㅎ', 'ㅗ', 'ㅓ', 'ㅏ', 'ㅣ'];
   const thirdLettersKr = ['ㅋ', 'ㅌ', 'ㅊ', 'ㅍ', 'ㅠ', 'ㅜ', 'ㅡ'];
 
@@ -26,36 +26,42 @@ const KeyboardJinyoung = () => {
   };
 
   const addLetter = (el) => {
-    setInputValue(inputValue + el);
+    setInputValue([...inputValue, el]);
   };
 
   return (
     <KeyboardJinyoungContainer>
-      <div className='fog' />
+      <div className='fog' onClick={() => setIsKeyboardClicked(false)} />
       <div className='keyboard-container'>
         <div className='input-container'>
-          <input type='text' className='input' placeholder='마음껏 테스트 해보세요' value={inputValue} disabled />
+          <input
+            type='text'
+            className='input'
+            placeholder='마음껏 테스트 해보세요'
+            value={Hangul.assemble(inputValue)}
+            disabled
+          />
         </div>
         <div className='keyboard'>
           <div className='menu-bar'>
-            <div className='menu flex-center'>icon</div>
-            <div className='menu flex-center'>icon</div>
-            <div className='menu flex-center'>icon</div>
-            <div className='menu flex-center'>icon</div>
-            <div className='menu flex-center'>icon</div>
-            <div className='menu flex-center'>icon</div>
+            <div className='menu'>★</div>
+            <div className='menu'>※</div>
+            <div className='menu'>♬</div>
+            <div className='menu'>☎</div>
+            <div className='menu'>§</div>
+            <div className='menu'>◈</div>
           </div>
           <div className='keyboard-line'>
             {nums.map((el) => {
               return (
-                <div
-                  className='num flex-center hover'
+                <button
+                  className='num active'
                   key={el}
                   onClick={() => {
-                    addLetter(el);
+                    addLetter(`${el}`);
                   }}>
                   {el}
-                </div>
+                </button>
               );
             })}
           </div>
@@ -65,27 +71,27 @@ const KeyboardJinyoung = () => {
                 {isShiftClicked
                   ? firstLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el.toUpperCase()}
                           onClick={() => {
                             addLetter(el.toUpperCase());
                             setIsShiftClicked(false);
                           }}>
                           {el.toUpperCase()}
-                        </div>
+                        </button>
                       );
                     })
                   : firstLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el}
                           onClick={() => {
                             addLetter(el);
                           }}>
                           {el}
-                        </div>
+                        </button>
                       );
                     })}
               </div>
@@ -94,68 +100,68 @@ const KeyboardJinyoung = () => {
                 {isShiftClicked
                   ? secondLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el.toUpperCase()}
                           onClick={() => {
                             addLetter(el.toUpperCase());
                             setIsShiftClicked(false);
                           }}>
                           {el.toUpperCase()}
-                        </div>
+                        </button>
                       );
                     })
                   : secondLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el}
                           onClick={() => {
                             addLetter(el);
                           }}>
                           {el}
-                        </div>
+                        </button>
                       );
                     })}
               </div>
 
               <div className='keyboard-line'>
-                <div className='wide-btn flex-center hover' onClick={handlingShift}>
+                <button className='wide-btn active' onClick={handlingShift}>
                   Shift
-                </div>
+                </button>
                 {isShiftClicked
                   ? thirdLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el.toUpperCase()}
                           onClick={() => {
                             addLetter(el.toUpperCase());
                             setIsShiftClicked(false);
                           }}>
                           {el.toUpperCase()}
-                        </div>
+                        </button>
                       );
                     })
                   : thirdLettersEn.map((el) => {
                       return (
-                        <div
-                          className='letter flex-center hover'
+                        <button
+                          className='letter active'
                           key={el}
                           onClick={() => {
                             addLetter(el);
                           }}>
                           {el}
-                        </div>
+                        </button>
                       );
                     })}
-                <div
-                  className='wide-btn flex-center hover'
+                <button
+                  className='wide-btn active'
                   onClick={() => {
                     setInputValue(inputValue.slice(0, inputValue.length - 1));
                   }}>
                   Back
-                </div>
+                </button>
               </div>
             </>
           ) : (
@@ -164,16 +170,28 @@ const KeyboardJinyoung = () => {
                 {isShiftClicked
                   ? firstDoubleLettersKr.map((el) => {
                       return (
-                        <div className='letter flex-center hover' key={el}>
+                        <button
+                          className='letter active'
+                          key={el}
+                          onClick={() => {
+                            addLetter(el);
+                            isShiftClicked && setIsShiftClicked(false);
+                          }}>
                           {el}
-                        </div>
+                        </button>
                       );
                     })
                   : firstLettersKr.map((el) => {
                       return (
-                        <div className='letter flex-center hover' key={el}>
+                        <button
+                          className='letter active'
+                          key={el}
+                          onClick={() => {
+                            addLetter(el);
+                            isShiftClicked && setIsShiftClicked(false);
+                          }}>
                           {el}
-                        </div>
+                        </button>
                       );
                     })}
               </div>
@@ -181,48 +199,67 @@ const KeyboardJinyoung = () => {
               <div className='keyboard-line'>
                 {secondLettersKr.map((el) => {
                   return (
-                    <div className='letter flex-center hover' key={el}>
+                    <button
+                      className='letter active'
+                      key={el}
+                      onClick={() => {
+                        addLetter(el);
+                        isShiftClicked && setIsShiftClicked(false);
+                      }}>
                       {el}
-                    </div>
+                    </button>
                   );
                 })}
               </div>
 
               <div className='keyboard-line'>
-                <div className='wide-btn flex-center hover' onClick={handlingShift}>
+                <button className='wide-btn active' onClick={handlingShift}>
                   Shift
-                </div>
+                </button>
                 {thirdLettersKr.map((el) => {
                   return (
-                    <div className='letter flex-center hover' key={el}>
+                    <button
+                      className='letter active'
+                      key={el}
+                      onClick={() => {
+                        addLetter(el);
+                        isShiftClicked && setIsShiftClicked(false);
+                      }}>
                       {el}
-                    </div>
+                    </button>
                   );
                 })}
-                <div className='wide-btn flex-center hover'>Back</div>
+                <button
+                  className='wide-btn active'
+                  onClick={() => {
+                    setInputValue(inputValue.slice(0, inputValue.length - 1));
+                  }}>
+                  Back
+                </button>
               </div>
             </>
           )}
           <div className='keyboard-line'>
-            <div className='wide-btn flex-center hover'>!@#</div>
-            <div className='letter flex-center hover' onClick={handlingLanguage}>
+            <button className='wide-btn active'>!@#</button>
+            <button className='letter active' onClick={handlingLanguage}>
               🌐
-            </div>
-            <div className='letter flex-center hover'>:-)</div>
-            <div
-              className='space hover'
+            </button>
+            <button className='letter active'>:-)</button>
+            <button
+              className='space active'
               onClick={() => {
                 addLetter(' ');
-              }}
-            />
-            <div
-              className='letter flex-center hover'
+              }}>
+              Enter
+            </button>
+            <button
+              className='letter active'
               onClick={() => {
                 addLetter('.');
               }}>
               .
-            </div>
-            <div className='wide-btn flex-center hover'>Enter</div>
+            </button>
+            <button className='wide-btn active'>↵</button>
           </div>
         </div>
       </div>
@@ -231,6 +268,15 @@ const KeyboardJinyoung = () => {
 };
 
 const KeyboardJinyoungContainer = styled.div`
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #8c8d8f;
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
   .fog {
     position: fixed;
     top: 0;
@@ -238,12 +284,6 @@ const KeyboardJinyoungContainer = styled.div`
     right: 0;
     height: calc(100vh - 292.333px);
     background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .keyboard-container {
@@ -277,7 +317,6 @@ const KeyboardJinyoungContainer = styled.div`
       flex-direction: column;
       align-items: center;
       padding-bottom: 5px;
-      color: #8c8d8f;
       background-color: #eeeef3;
 
       .menu-bar {
@@ -286,8 +325,12 @@ const KeyboardJinyoungContainer = styled.div`
         width: 100vw;
         border-bottom: 1px solid #8c8d8f;
         margin-bottom: 5px;
+        color: #8c8d8f;
 
         .menu {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           height: 35px;
         }
       }
@@ -295,9 +338,9 @@ const KeyboardJinyoungContainer = styled.div`
       .keyboard-line {
         display: flex;
 
-        .hover {
+        .active {
           cursor: pointer;
-          &:hover {
+          &:active {
             background-color: #b7b7b7;
           }
         }
@@ -306,32 +349,24 @@ const KeyboardJinyoungContainer = styled.div`
           width: 8vw;
           height: 25px;
           margin: 3px;
-          border-radius: 5px;
-          background-color: white;
         }
 
         .letter {
           width: 8vw;
           height: 35px;
           margin: 3px;
-          border-radius: 5px;
-          background-color: white;
         }
 
         .wide-btn {
           width: 12.4vw;
           height: 35px;
           margin: 3px;
-          border-radius: 5px;
-          background-color: white;
         }
 
         .space {
           width: calc(32vw + 19px);
           height: 35px;
           margin: 3px;
-          border-radius: 5px;
-          background-color: white;
         }
       }
     }
