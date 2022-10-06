@@ -55,65 +55,65 @@ const CategoryTheme = ({ category }) => {
 const ThemeContainer = styled.div`
   display: grid;
   grid-template-columns: 47.815% 47.815%;
-  grid-column-gap 4.37%;
+  grid-column-gap: 4.37%;
   padding: 24px 16px;
-  
+
   .theme-container {
-    margin-bottom : 16px;
-    cursor : pointer;
-    :nth-last-child(1){
-        margin-bottom : 60px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    :nth-last-child(1) {
+      margin-bottom: 60px;
     }
     .theme-img {
       width: 100%;
-      border-radius : 8px;
+      border-radius: 8px;
     }
 
     .theme-name {
-      color: #42444C;
-      margin-top : 8px;
-      font-weight : 500;
-      font-size : 14px;
-      line-height : 20px;
+      color: #42444c;
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
     }
 
-    .theme-hashtag { 
-      display : initial;  
+    .theme-hashtag {
+      display: initial;
       font-weight: 400;
       font-size: 12px;
       line-height: 18px;
-      color: #AAABB3;
-      margin : 2px 2px 0 0;
+      color: #aaabb3;
+      margin: 2px 2px 0 0;
       word-break: break-all;
     }
 
     .theme-bottom-container {
-      display : flex;
-      justify-content : space-between;
-      margin-top : 3px;   
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3px;
       font-size: 12px;
       line-height: 18px;
 
       .theme-download-container {
-        display : inherit;
+        display: inherit;
 
-        .theme-download {    
-           color: #AAABB3;
+        .theme-download {
+          color: #aaabb3;
         }
       }
 
       .theme-price-container {
-        display : inherit;
+        display: inherit;
 
-         .theme-price {     
-            color: #7DC9FC;
-          }
-      }  
+        .theme-price {
+          color: #7dc9fc;
+        }
+      }
 
       img {
-        width : 12px;
-        height : 12px;
-        margin : auto 3px auto auto;
+        width: 12px;
+        height: 12px;
+        margin: auto 3px auto auto;
       }
     }
 
