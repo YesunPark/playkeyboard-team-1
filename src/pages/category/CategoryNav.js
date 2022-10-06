@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import CategoryTheme from './CategoryTheme';
 
-const CategoryNav = () => {
+const CategoryNav = ({ activeIndex, setActiveIndex }) => {
   const [category, setCategory] = useState([]);
-  const [activeIndex, setActiveIndex] = useState('LIVE');
+
   useEffect(() => {
     axios.get('https://api.plkey.app/theme/category').then((res) => {
       setCategory(res.data.data);

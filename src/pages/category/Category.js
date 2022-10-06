@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import CategoryNav from './CategoryNav';
 import CategoryOption from './CategoryOption';
 
-const Category = () => {
+const Category = ({ activeIndex, setActiveIndex }) => {
   return (
     <CategoryContainer>
       <div className='category-container'>
-        <CategoryNav />
+        <CategoryNav activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
         <CategoryOption />
       </div>
     </CategoryContainer>
