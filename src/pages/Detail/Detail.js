@@ -4,8 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import DetailInfo from './DetailInfo';
 import DetailEmoji from './DetailEmoji';
-import QnaButton from './QnaButton';
-import BuyButton from './BuyButton';
+import DetailBuyButton from './DetailBuyButton';
+import DetailQnaButton from './DetailQnaButton';
 import DetailIcon from './DetailIcon';
 
 const Detail = () => {
@@ -24,6 +24,9 @@ const Detail = () => {
         <DetailContainer>
           <DetailInfo data={data} />
           {data.isLiveTheme && <DetailEmoji data={data} />}
+          <DetailIcon />
+          <DetailQnaButton />
+          <DetailBuyButton data={data} />
         </DetailContainer>
       )}
     </>
@@ -39,9 +42,7 @@ const DetailContainer = styled.div`
   margin: auto;
 
   @media ${({ theme }) => theme.responsive.tablet} {
-    .detail-container {
-      width: 100%;
-    }
+    width: 100%;
   }
 `;
 

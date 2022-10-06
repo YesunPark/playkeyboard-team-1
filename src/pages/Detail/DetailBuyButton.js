@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BuyButton = ({ data }) => {
+const DetailBuyButton = ({ data }) => {
   console.log(data);
   return (
     <>
@@ -47,4 +47,4 @@ const BuyButtonWrap = styled.div`
     }
   }
 `;
-export default BuyButton;
+export default DetailBuyButton;

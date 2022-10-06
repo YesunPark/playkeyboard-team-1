@@ -20,13 +20,14 @@ const DetailInfo = ({ data }) => {
         <img className='share hover' alt='share' src={require('../../assets/images/share.png')} />
       </div>
       <TagList>
-        {data.hashtag.map((tag) => {
-          return (
-            <li key={tag} className='hover'>
-              {tag}
-            </li>
-          );
-        })}
+        {data.hashtag &&
+          data.hashtag.map((tag) => {
+            return (
+              <li key={tag} className='hover'>
+                {tag}
+              </li>
+            );
+          })}
       </TagList>
       <div className='advertise hover'>AD</div>
     </Container>

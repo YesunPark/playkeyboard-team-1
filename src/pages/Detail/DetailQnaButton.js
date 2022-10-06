@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const QnaButton = () => {
+const DetailQnaButton = () => {
   return (
     <>
       <QnaButtonWrap>
@@ -25,4 +25,4 @@ const QnaButtonWrap = styled.div`
     cursor: pointer;
   }
 `;
-export default QnaButton;
+export default DetailQnaButton;
