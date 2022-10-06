@@ -12,7 +12,7 @@ function Router() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Routes>
-          <Route path='/category' element={<Category />} />
+          <Route path={`${process.env.PUBLIC_URL}/`} element={<Category />} />
           <Route path='/detail/:themeId' element={<Detail />} />
         </Routes>
       </ThemeProvider>
