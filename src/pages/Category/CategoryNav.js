@@ -19,113 +19,79 @@ const CategoryNav = () => {
 
   return (
     <Container>
-      <div>
-        <div className='logoArea'>
-          <Link to='/'>
-            <Image src={require('../../asset/image/logo.png')} />
-          </Link>
-        </div>
-        <h3>취향대로 골라보기</h3>
-        <nav>
-          <ul>
-            {category.map((data, idx) => {
-              return (
-                <li key={idx} className={activeIndex === data ? 'isActive' : ''} onClick={() => tabClickHandler(data)}>
-                  <span> {data}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        {category
-          .filter((data) => activeIndex === data)
-          .map((data) => {
-            return <div onClick={() => tabClickHandler(data)}>{data}</div>;
-          })}
-        <div className='test'>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-          <p>ss</p>
-        </div>
+      <div className='logo-area d-flex-between'>
+        <Link to='/category' className='logo'>
+          <Img alt='' src={require('../../asset/image/logo.png')} />{' '}
+        </Link>
+        <Link to='' className='magnifier'>
+          <Img alt='' src={require('../../asset/image/magnifier.png')} />
+        </Link>
       </div>
+      <h3 className='sub-title'>취향대로 골라보기</h3>
+      <nav className='d-flex-between'>
+        <ul className='d-flex-between'>
+          {category.map((data, idx) => {
+            return (
+              <li key={idx} className={activeIndex === data ? 'isActive' : ''} onClick={() => tabClickHandler(data)}>
+                <span> {data}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      {category
+        .filter((data) => activeIndex === data)
+        .map((data) => {
+          return <div onClick={() => tabClickHandler(data)}>{data}</div>;
+        })}
     </Container>
   );
 };
-const Image = styled.img`
+const Img = styled.img`
   display: block;
-  margin-top: 8px;
-  max-width: 136px;
+  width: 100%;
 `;
 const Container = styled.div`
-  .test {
-    padding: 16px;
+  .d-flex-between {
+    display: flex;
+    justify-content: space-between;
   }
-  .logoArea {
+  .logo-area {
     position: fixed;
+    top: 0px;
+    align-items: center;
+    width: 100%;
+    max-width: 640px;
     height: 64px;
     padding: 12px 16px;
     background: #fff;
+    .logo {
+      max-width: 136px;
+    }
+    .magnifier {
+      width: 5.2%;
+    }
   }
   h3 {
     padding: 80px 16px 16px;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 700;
     color: #42444c;
   }
   nav {
-    display: flex;
-    justify-content: space-between;
     position: sticky;
     top: 64px;
     width: 100%;
     background: #fff;
     overflow-x: auto;
     scrollbar-width: none;
+
     ::-webkit-scrollbar {
       display: none;
     }
     ul {
-      display: flex;
-      justify-content: space-between;
       font-size: 14px;
+      min-width: 640px;
       .isActive {
         color: #ff417d;
         font-weight: 700;
@@ -139,6 +105,12 @@ const Container = styled.div`
         text-align: center;
         color: #aaabb3;
         white-space: nowrap;
+        font-size: 0.88 em;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
         cursor: pointer;
         :nth-child(1) {
           padding-left: 16px;
