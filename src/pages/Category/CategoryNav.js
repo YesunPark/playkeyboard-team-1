@@ -96,12 +96,12 @@ const Container = styled.div`
         color: #ff417d;
         font-weight: 700;
         span {
-          padding: 0 0 7px 0;
+          padding: 0 0 10px 0;
           border-bottom: 2px solid #ff417d;
         }
       }
       li {
-        padding: 10px;
+        padding: 13px 10px;
         text-align: center;
         color: #aaabb3;
         white-space: nowrap;
