@@ -20,7 +20,7 @@ const DetailBuyButton = ({ data }) => {
 
 const BuyButtonWrap = styled.div`
   padding: 10px;
-  box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid #f2f3f7;
   .buy-btn {
     width: 100%;
     padding: 3px 0;

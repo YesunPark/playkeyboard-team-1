@@ -71,8 +71,13 @@ const IconBox = styled.div`
   color: ${({ theme }) => theme.colors.grayText};
 
   .icon-img {
-    font-size: 8vw;
+    font-size: 51px;
     margin-bottom: 8px;
+  }
+  @media ${({ theme }) => theme.responsive.tablet} {
+    .icon-img {
+      font-size: 8vw;
+    }
   }
   .icon-text {
     font-size: 12px;
