@@ -32,7 +32,7 @@ const OptionContainer = styled.div`
   justify-content: space-between;
   padding: 7.72px 34.16px;
   background-color: #fff;
-  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 -4px 5px -4px rgb(0 0 0 / 20%);
 
   .option-container {
     display: grid;
