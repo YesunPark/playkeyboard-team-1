@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+import CategoryNav from './CategoryNav';
+import CategoryOption from './CategoryOption';
 
 const Category = () => {
   return (
     <CategoryContainer>
-      <div className='category-container'></div>
+      <div className='category-container'>
+        <CategoryNav />
+        <CategoryOption />
+      </div>
     </CategoryContainer>
   );
 };
@@ -15,7 +20,6 @@ const CategoryContainer = styled.div`
   .category-container {
     width: 640px;
     min-height: 100vh;
-    border: 1px solid black;
     color: ${({ theme }) => theme.colors.grayText};
   }
 

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import DetailInfo from './DetailInfo';
+import DetailEmoji from './DetailEmoji';
 import QnaButton from './QnaButton';
 import BuyButton from './BuyButton';
 import DetailIcon from './DetailIcon';
@@ -20,11 +22,8 @@ const Detail = () => {
     <>
       {data && (
         <DetailContainer>
-          <div className='detail-container'>
-            <DetailIcon />
-            <QnaButton />
-            <BuyButton data={data} />
-          </div>
+          <DetailInfo data={data} />
+          {data.isLiveTheme && <DetailEmoji data={data} />}
         </DetailContainer>
       )}
     </>
@@ -33,13 +32,11 @@ const Detail = () => {
 
 const DetailContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-
-  .detail-container {
-    width: 640px;
-    min-height: 100vh;
-    border: 1px solid black;
-  }
+  width: 640px;
+  min-height: 100vh;
+  margin: auto;
 
   @media ${({ theme }) => theme.responsive.tablet} {
     .detail-container {
