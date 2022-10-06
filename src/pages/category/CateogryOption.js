@@ -4,19 +4,19 @@ const CateogryOption = () => {
   return (
     <OptionContainer>
       <div className='option-container'>
-        <img src={require('../../assets/images/store.png')} alt='image' />
+        <img src={require('../../assets/images/store.png')} alt='store' />
         <span>스토어</span>
       </div>
       <div className='option-container'>
-        <img src={require('../../assets/images/charge.png')} alt='image' />
+        <img src={require('../../assets/images/charge.png')} alt='charge' />
         <span>충전소</span>
       </div>
       <div className='option-container'>
-        <img src={require('../../assets/images/mytheme.png')} alt='image' />
+        <img src={require('../../assets/images/mytheme.png')} alt='myTheme' />
         <span>MY테마</span>
       </div>
       <div className='option-container'>
-        <img src={require('../../assets/images/setting.png')} alt='image' />
+        <img src={require('../../assets/images/setting.png')} alt='setting' />
         <span>설정</span>
       </div>
     </OptionContainer>

@@ -25,7 +25,7 @@ const CategoryTheme = ({ category }) => {
           return (
             <div className='theme-container' key={data.themeId} onClick={() => buttonHandler(data.themeId)}>
               <div className='theme-top-container'>
-                <img src={data.imageUrl} alt='image' className='theme-img' />
+                <img src={data.imageUrl} alt='theme' className='theme-img' />
                 <span className='theme-name'>{data.name}</span>
                 {data.hashtag.map((tag, index) => {
                   return (
@@ -37,11 +37,11 @@ const CategoryTheme = ({ category }) => {
               </div>
               <div className='theme-bottom-container'>
                 <div className='theme-download-container'>
-                  <img src={require('../../assets/images/download.png')} alt='image' />
+                  <img src={require('../../assets/images/download.png')} alt='download' />
                   <span className='theme-download'>{data.downloads}</span>
                 </div>
                 <div className='theme-price-container'>
-                  <img src={require('../../assets/images/price.png')} alt='image' />
+                  <img src={require('../../assets/images/price.png')} alt='price' />
                   <span className='theme-price'>{data.price}</span>
                 </div>
               </div>
