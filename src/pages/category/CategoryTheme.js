@@ -21,8 +21,8 @@ const CategoryTheme = () => {
 
   return (
     <ThemeContainer>
-      {list.data.length !== 0 &&
-        list.data.map((data) => {
+      {list.data?.length !== 0 &&
+        list.data?.map((data) => {
           return (
             <div className='theme-container' key={data.id} onClick={() => buttonHandler(data.themeId)}>
               <div className='theme-top-container'>
