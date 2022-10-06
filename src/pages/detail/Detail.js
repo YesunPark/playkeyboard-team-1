@@ -16,25 +16,24 @@ const Detail = () => {
   }, [params]);
 
   return (
-    <DetailContainer>
+    <>
       {data && (
-        <div className='detail-container'>
+        <DetailContainer>
           <DetailInfo data={data} />
           {data.isLiveTheme && <DetailEmoji data={data} />}
-        </div>
+        </DetailContainer>
       )}
-    </DetailContainer>
+    </>
   );
 };
 
 const DetailContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-
-  .detail-container {
-    width: 640px;
-    min-height: 100vh;
-  }
+  width: 640px;
+  min-height: 100vh;
+  margin: auto;
 
   @media ${({ theme }) => theme.responsive.tablet} {
     .detail-container {
