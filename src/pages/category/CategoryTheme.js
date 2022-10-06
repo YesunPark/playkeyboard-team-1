@@ -24,12 +24,16 @@ const CategoryTheme = () => {
       {list.data?.length !== 0 &&
         list.data?.map((data) => {
           return (
-            <div className='theme-container' key={data.id} onClick={() => buttonHandler(data.themeId)}>
+            <div className='theme-container' key={data.themeId} onClick={() => buttonHandler(data.themeId)}>
               <div className='theme-top-container'>
                 <img src={data.imageUrl} alt='image' className='theme-img' />
                 <span className='theme-name'>{data.name}</span>
-                {data.hashtag.map((tag) => {
-                  return <span className='theme-hashtag'>#{tag}</span>;
+                {data.hashtag.map((tag, index) => {
+                  return (
+                    <span className='theme-hashtag' key={index}>
+                      #{tag}
+                    </span>
+                  );
                 })}
               </div>
               <div className='theme-bottom-container'>
