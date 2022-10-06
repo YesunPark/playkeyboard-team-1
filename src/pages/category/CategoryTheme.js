@@ -61,9 +61,9 @@ const ThemeContainer = styled.div`
   .theme-container {
     margin-bottom : 16px;
     cursor : pointer;
-:nth-last-child(1){
-  margin-bottom : 60px;
-}
+    :nth-last-child(1){
+        margin-bottom : 60px;
+    }
     .theme-img {
       width: 100%;
       border-radius : 8px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CateogryOption = () => {
+const CategoryOption = () => {
   return (
     <OptionContainer>
       <div className='option-container'>
@@ -61,4 +61,4 @@ const OptionContainer = styled.div`
   }
 `;
 
-export default CateogryOption;
+export default CategoryOption;
