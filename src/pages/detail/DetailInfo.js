@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const DetailInfo = ({ data }) => {
+const DetailInfo = ({ data, setIsKeyboardClicked }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -11,7 +11,14 @@ const DetailInfo = ({ data }) => {
   return (
     <Container>
       <img className='back hover' alt='back' onClick={handleBack} src={require('../../assets/images/back.png')} />
-      <img className='preview-img hover' alt='preview' src={data.imageUrl} />
+      <img
+        className='preview-img hover'
+        alt='preview'
+        src={data.imageUrl}
+        onClick={() => {
+          setIsKeyboardClicked(true);
+        }}
+      />
       <div className='title'>
         <div>
           <span className='name'>{data.name}</span>
@@ -20,13 +27,14 @@ const DetailInfo = ({ data }) => {
         <img className='share hover' alt='share' src={require('../../assets/images/share.png')} />
       </div>
       <TagList>
-        {data.hashtag.map((tag) => {
-          return (
-            <li key={tag} className='hover'>
-              {tag}
-            </li>
-          );
-        })}
+        {data.hashtag &&
+          data.hashtag.map((tag) => {
+            return (
+              <li key={tag} className='hover'>
+                {tag}
+              </li>
+            );
+          })}
       </TagList>
       <div className='advertise hover'>AD</div>
     </Container>

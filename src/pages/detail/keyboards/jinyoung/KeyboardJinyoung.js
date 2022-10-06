@@ -269,6 +269,9 @@ const KeyboardJinyoung = ({ setIsKeyboardClicked }) => {
 
 const KeyboardJinyoungContainer = styled.div`
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 5px;
     background-color: white;
