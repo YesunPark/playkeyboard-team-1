@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
 const CategoryTheme = () => {
   const [list, setList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getList = async () => {
@@ -13,12 +15,16 @@ const CategoryTheme = () => {
     getList();
   }, []);
 
+  const buttonHandler = (id) => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <ThemeContainer>
       {list.data.length !== 0 &&
         list.data.map((data) => {
           return (
-            <div className='theme-container'>
+            <div className='theme-container' key={data.id} onClick={() => buttonHandler(data.themeId)}>
               <div className='theme-top-container'>
                 <img src={data.imageUrl} alt='image' className='theme-img' />
                 <span className='theme-name'>{data.name}</span>
