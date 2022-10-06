@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+
 import DetailInfo from './DetailInfo';
 import DetailEmoji from './DetailEmoji';
 
@@ -36,9 +37,7 @@ const DetailContainer = styled.div`
   margin: auto;
 
   @media ${({ theme }) => theme.responsive.tablet} {
-    .detail-container {
-      width: 100%;
-    }
+    width: 100%;
   }
 `;
 
