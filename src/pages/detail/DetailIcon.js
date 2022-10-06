@@ -56,6 +56,7 @@ const IconWrap = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 0 16px;
+  margin-top: 80px;
 
   .isActive {
     color: ${({ theme }) => theme.colors.mainColor};
