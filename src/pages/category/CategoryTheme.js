@@ -60,6 +60,7 @@ const ThemeContainer = styled.div`
   
   .theme-container {
     margin-bottom : 16px;
+    cursor : pointer;
 :nth-last-child(1){
   margin-bottom : 60px;
 }

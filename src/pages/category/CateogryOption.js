@@ -36,6 +36,7 @@ const OptionContainer = styled.div`
 
   .option-container {
     display: grid;
+    cursor: pointer;
 
     img {
       width: 24.04px;
