@@ -2,14 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import CategoryTheme from './CategoryTheme';
 
 const CategoryNav = () => {
   const [category, setCategory] = useState([]);
-  const [activeIndex, setActiveIndex] = useState('');
+  const [activeIndex, setActiveIndex] = useState('LIVE');
   useEffect(() => {
     axios.get('https://api.plkey.app/theme/category').then((res) => {
       setCategory(res.data.data);
-      console.log(res);
     });
   }, []);
 
@@ -41,8 +41,8 @@ const CategoryNav = () => {
       </nav>
       {category
         .filter((data) => activeIndex === data)
-        .map((data) => {
-          return <div onClick={() => tabClickHandler(data)}>{data}</div>;
+        .map((data, idx) => {
+          return <CategoryTheme category={data} key={idx} onClick={() => tabClickHandler(data)} />;
         })}
     </Container>
   );
@@ -69,11 +69,11 @@ const Container = styled.div`
       max-width: 136px;
     }
     .magnifier {
-      width: 5.2%;
+      max-width: 20px;
     }
   }
   h3 {
-    padding: 80px 16px 16px;
+    padding: 68px 16px 16px;
     font-size: 1em;
     font-weight: 700;
     color: #42444c;
@@ -96,12 +96,12 @@ const Container = styled.div`
         color: #ff417d;
         font-weight: 700;
         span {
-          padding: 0 0 5px 0;
+          padding: 0 0 7px 0;
           border-bottom: 2px solid #ff417d;
         }
       }
       li {
-        padding: 8px 10px;
+        padding: 10px;
         text-align: center;
         color: #aaabb3;
         white-space: nowrap;

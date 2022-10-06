@@ -3,17 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
-const CategoryTheme = () => {
+const CategoryTheme = ({ category }) => {
   const [list, setList] = useState([]);
   const navigate = useNavigate();
-
   useEffect(() => {
     const getList = async () => {
-      const listData = await axios.get('https://api.plkey.app/theme?category=LIVE');
+      const listData = await axios.get(`https://api.plkey.app/theme?category=${category}`);
       setList(listData.data);
     };
     getList();
-  }, []);
+  }, [category]);
 
   const buttonHandler = (id) => {
     navigate(`/detail/${id}`);
@@ -60,9 +59,10 @@ const ThemeContainer = styled.div`
   padding: 24px 16px;
   
   .theme-container {
-
     margin-bottom : 16px;
-
+:nth-last-child(1){
+  margin-bottom : 60px;
+}
     .theme-img {
       width: 100%;
       border-radius : 8px;

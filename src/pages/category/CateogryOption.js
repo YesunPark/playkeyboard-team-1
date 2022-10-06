@@ -24,9 +24,14 @@ const CateogryOption = () => {
 };
 
 const OptionContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 640px;
   display: flex;
   justify-content: space-between;
   padding: 7.72px 34.16px;
+  background-color: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 20%);
 
   .option-container {
