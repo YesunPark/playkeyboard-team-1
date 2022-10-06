@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const DetailBuyButton = ({ data }) => {
-  console.log(data);
   return (
     <>
       <BuyButtonWrap>

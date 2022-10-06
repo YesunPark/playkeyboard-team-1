@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import styled from 'styled-components';
-
 import DetailInfo from './DetailInfo';
 import DetailEmoji from './DetailEmoji';
 import DetailBuyButton from './DetailBuyButton';
