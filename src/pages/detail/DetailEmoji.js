@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const DetailEmoji = ({ data }) => {
-  const emoji = data.figure;
+  const emojis = data.figure;
 
   return (
     <DetailEmojiContainer>
       <div className='detail-emoji-container'>
-        {emoji.map((el, i) => {
-          return <img src={el.imageUrl} alt={el.keyword} className='emoji-img' key={i} />;
+        {emojis.map((emoji) => {
+          return <img src={emoji.imageUrl} alt={emoji.keyword} className='emoji-img' key={emoji.imageUrl} />;
         })}
       </div>
       <div className='detail-emoji-text'>
