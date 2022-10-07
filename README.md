@@ -19,7 +19,7 @@ https://www.notion.so/1-b2d8f038c91c41aa9c2153b9c656c680
 + Front-end : React.js styled component, hangul_js, React-Router-Dom
 
 ## 후기
-+ 김진영 : [개인 블로그 게시물](https://velog.io/@jellybrown/TIL-%ED%94%84%EB%A6%AC%EC%98%A8%EB%B3%B4%EB%94%A9-6%EC%9D%BC%EC%B0%A8#%EB%8A%90%EB%82%80%EC%A0%90-1)
++ 김진영 : [개인 블로그 게시물](https://velog.io/@jinyoung985/Pre-Onboarding-%ED%94%8C%EB%A0%88%EC%9D%B4%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%9B%B9-%EC%8A%A4%ED%86%A0%EC%96%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0)
 
 ## 개인 별 구현 기능
 
@@ -63,7 +63,7 @@ https://github.com/YesunPark/pre-on-boarding-1st-task/blob/9ccd43114998f8983faef
   - hangul-js 라이브러리를 통해 한글 및 영어 키보드를 구현했습니다.<br/>
 useState를 통해 inputValue라는 state를 관리하고 키보드 상단 input의 value를 inputValue state로 설정해주어 키 값을 입력할 때마다 상태값이 업데이트 되도록 구현했습니다.
   - detail 페이지에서 데이터를 받아와 isLiveTheme가 true인 경우에만 이모티콘과 텍스트 박스를 출력하도록 설정했습니다.
-  - 자세한 내용은 [개인 블로그 게시물](https://velog.io/@jellybrown/TIL-%ED%94%84%EB%A6%AC%EC%98%A8%EB%B3%B4%EB%94%A9-6%EC%9D%BC%EC%B0%A8#%EB%8A%90%EB%82%80%EC%A0%90-1)에 정리해놓았습니다.
+  - 자세한 내용은 [개인 블로그 게시물](https://velog.io/@jinyoung985/Pre-Onboarding-%ED%94%8C%EB%A0%88%EC%9D%B4%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%9B%B9-%EC%8A%A4%ED%86%A0%EC%96%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0)에 정리해놓았습니다.
 
 ### [김정연] - 두번째 페이지
 - 구현한 기능 : 클릭시 이모티콘 카운트 증가, style 변화
