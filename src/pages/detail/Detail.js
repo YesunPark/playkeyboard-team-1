@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import styled from 'styled-components';
 import DetailInfo from './DetailInfo';
 import DetailEmoji from './DetailEmoji';
-import DetailBuyButton from './DetailBuyButton';
-import DetailQnaButton from './DetailQnaButton';
-import DetailIcon from './DetailIcon';
 import KeyboardJinyoung from './keyboards/jinyoung/KeyboardJinyoung';
-import styled from 'styled-components';
+import DetailIcon from './DetailIcon';
+import DetailQnaButton from './DetailQnaButton';
+import DetailBuyButton from './DetailBuyButton';
 
 const Detail = () => {
   const params = useParams();
