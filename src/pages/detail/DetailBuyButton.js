@@ -2,18 +2,16 @@ import styled from 'styled-components';
 
 const DetailBuyButton = ({ data }) => {
   return (
-    <>
-      <BuyButtonWrap>
-        <button className='buy-btn'>
-          <p className='buy-info'>
-            구매
-            <img className='buy-img' src={require('../../assets/images/icon_dia_type3.png')} alt='가격' />
-            <span>{data.price}</span>
-          </p>
-          <p className='buy-ad'>광고제거˙무제한 사용</p>
-        </button>
-      </BuyButtonWrap>
-    </>
+    <BuyButtonWrap>
+      <button className='buy-btn'>
+        <p className='buy-info'>
+          구매
+          <img className='buy-img' src={require('../../assets/images/icon_dia_type3.png')} alt='가격' />
+          <span>{data.price}</span>
+        </p>
+        <p className='buy-ad'>광고제거˙무제한 사용</p>
+      </button>
+    </BuyButtonWrap>
   );
 };
 

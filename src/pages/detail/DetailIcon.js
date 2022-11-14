@@ -36,19 +36,17 @@ const DetailIcon = () => {
   };
 
   return (
-    <>
-      <IconWrap>
-        {icon.map((item, idx) => {
-          return (
-            <IconBox key={idx} id={idx} className={colorChange === count[idx] ? 'isActive' : ''} onClick={changeCount}>
-              <div className='icon-img'>{item.icon}</div>
-              <div className='icon-text'>{item.text}</div>
-              <div className='icon-count'>{count[idx]}</div>
-            </IconBox>
-          );
-        })}
-      </IconWrap>
-    </>
+    <IconWrap>
+      {icon.map((item, idx) => {
+        return (
+          <IconBox key={idx} id={idx} className={colorChange === count[idx] ? 'isActive' : ''} onClick={changeCount}>
+            <div className='icon-img'>{item.icon}</div>
+            <div className='icon-text'>{item.text}</div>
+            <div className='icon-count'>{count[idx]}</div>
+          </IconBox>
+        );
+      })}
+    </IconWrap>
   );
 };
 

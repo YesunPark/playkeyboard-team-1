@@ -22,18 +22,16 @@ const Detail = () => {
   }, [params]);
 
   return (
-    <>
-      {data && (
-        <DetailContainer>
-          <DetailInfo data={data} setIsKeyboardClicked={setIsKeyboardClicked} />
-          {data.isLiveTheme && <DetailEmoji data={data} />}
-          {isKeyboardClicked && <KeyboardJinyoung setIsKeyboardClicked={setIsKeyboardClicked} />}
-          <DetailIcon />
-          <DetailQnaButton />
-          <DetailBuyButton data={data} />
-        </DetailContainer>
-      )}
-    </>
+    data && (
+      <DetailContainer>
+        <DetailInfo data={data} setIsKeyboardClicked={setIsKeyboardClicked} />
+        {data.isLiveTheme && <DetailEmoji data={data} />}
+        {isKeyboardClicked && <KeyboardJinyoung setIsKeyboardClicked={setIsKeyboardClicked} />}
+        <DetailIcon />
+        <DetailQnaButton />
+        <DetailBuyButton data={data} />
+      </DetailContainer>
+    )
   );
 };
 
