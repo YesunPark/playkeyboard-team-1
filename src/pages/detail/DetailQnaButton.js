@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 const DetailQnaButton = () => {
   return (
-    <QnaButtonWrap>
-      <button className='qna-btn'>상품 문의</button>
-    </QnaButtonWrap>
+    <>
+      <QnaButtonWrap>
+        <button className='qna-btn'>상품 문의</button>
+      </QnaButtonWrap>
+    </>
   );
 };
 
